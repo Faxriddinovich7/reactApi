@@ -1,5 +1,6 @@
 import React from "react";
 import  Card  from "../components/Card";
+import {Counter} from "../components/api.jsx"
 
 export default function Index() {
     const [count , setCount] = React.useState(0);
@@ -27,6 +28,8 @@ export default function Index() {
             <p>{count}</p>
             <button className="py-1.2 border rounded bg-blue-500 text-white px-4" onClick={decrement}>Ayirish</button>
             <Card secretNumber={count} products={products}  deleteProduct={deleteProduct} />
+            <Counter/>
+
         </>
     );
 }

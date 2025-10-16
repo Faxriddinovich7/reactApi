@@ -5,14 +5,14 @@ export default function ProductIn() {
     const { slug } = useParams();
     const [product, setProduct] = useState(null);
 
-    useEffect(() => {
-        async function fetchProducts() {
-            const res = await fetch("https://api.escuelajs.co/api/v1/products");
-            const data = await res.json();
+    async function fetchProducts() {
+        const res = await fetch("https://api.escuelajs.co/api/v1/products");
+        const data = await res.json();
 
-            const foundProduct = data.find((item) => item.slug === slug);
-            setProduct(foundProduct);
-        }
+        const foundProduct = data.find((item) => item.slug === slug);
+        setProduct(foundProduct);
+    }
+    useEffect(() => {
         fetchProducts();
     }, [slug]);
 

@@ -5,6 +5,7 @@ import ErrorPage from "./pages/error.jsx";
 import DocumentationPage from "./pages/document.jsx";
 import UserAboutPage from "./pages/userAbout.jsx";
 import ProductInPage from "./pages/productIn.jsx";
+import ProductId from "./pages/productId.jsx"
 
 export default function App() {
     return (
@@ -22,6 +23,7 @@ export default function App() {
                 </Route>
                 <Route path="*" element={<ErrorPage/>} />
                 <Route path="/productIn" element={< ProductInPage />}/>
+                <Route path="product/:id" element={< ProductId/>}/>
             </Routes>
         </>
     );
